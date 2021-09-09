@@ -90,7 +90,7 @@ Resources:
             Path: /hello
             Method: get
 
-  EC2Instance4:
+  EC2Instance7:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: !Ref InstanceType
@@ -101,6 +101,14 @@ Resources:
         - RegionAMI
         - !Ref AWS::Region
         - AMI
+      BlockDeviceMappings:
+        - DeviceName: '/dev/sda1'
+          Ebs:
+            DeleteOnTermination: true
+            VolumeSize: 128
+            VolumeType: 'gp3'
+            Encrypted: true
+
       UserData:
         Fn::Base64: |
           #!/bin/bash -xe
@@ -123,5 +131,5 @@ Outputs:
   InstanceIP:
     Description: Public IP address of the newly created EC2 instance
     Value: !GetAtt
-      - EC2Instance4
+      - EC2Instance7
       - PublicIp

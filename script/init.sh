@@ -7,7 +7,14 @@ add-apt-repository -y ppa:x2go/stable
 apt update
 apt --assume-yes upgrade
 curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
-apt install --assume-yes awscli unzip nodejs firefox docker.io docker-compose x2goserver x2goserver-xsession
+apt install --assume-yes \
+  awscli \
+  nodejs \
+  firefox \
+  docker.io docker-compose \
+  jq unzip \
+  x2goserver x2goserver-xsession \
+  postgresql-client-common
 
 echo '################'
 echo '# Install yarn #'
