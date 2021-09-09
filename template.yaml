@@ -90,7 +90,7 @@ Resources:
             Path: /hello
             Method: get
 
-  EC2Instance7:
+  EC2Instance8:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: !Ref InstanceType
@@ -131,5 +131,5 @@ Outputs:
   InstanceIP:
     Description: Public IP address of the newly created EC2 instance
     Value: !GetAtt
-      - EC2Instance7
+      - EC2Instance8
       - PublicIp

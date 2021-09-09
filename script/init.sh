@@ -14,7 +14,8 @@ apt install --assume-yes \
   docker.io docker-compose \
   jq unzip \
   x2goserver x2goserver-xsession \
-  postgresql-client-common
+  postgresql-client-common \
+  python3 python3-pip python3-cryptography less libxext6 libxrender1 libxtst6 libfreetype6 libxi6
 
 echo '################'
 echo '# Install yarn #'
